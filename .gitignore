@@ -1,0 +1,21 @@
+/node_modules/
+/dist/
+/coverage
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+.idea
+.vscode
+*~
+
+# npm config
+/.npmrc
+.npmrc
+
+# environment
+/.env

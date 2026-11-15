@@ -1,0 +1,86 @@
+{
+    "name": "@dasred/nginx-proxy-manager-mcp",
+    "version": "0.0.0",
+    "description": "Streamable HTTP MCP server for the Nginx Proxy Manager API (Node.js port of VeryBigSad/nginx-proxy-manager-mcp), packaged as a Docker image",
+    "type": "module",
+    "author": "Marco Starker",
+    "license": "MIT",
+    "private": true,
+    "bugs": {
+        "url": "https://github.com/dasred/nginx-proxy-manager-mcp/issues"
+    },
+    "homepage": "https://github.com/dasred/nginx-proxy-manager-mcp",
+    "engines": {
+        "node": ">=26.12.1",
+        "npm": ">=11.20.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dasred/nginx-proxy-manager-mcp.git"
+    },
+    "bin": {
+        "nginx-proxy-manager-mcp": "dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "start": "node dist/index.js",
+        "dev": "node --env-file-if-exists=.env --watch src/index.ts",
+        "typecheck": "tsc -p tsconfig.test.json",
+        "test": "npm run typecheck && node --test \"test/**/*.test.ts\"",
+        "publish:check": "semantic-release --branch main --no-ci --dry-run",
+        "semantic-release": "semantic-release"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.32.2",
+        "zod": "^4.6.7"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^7.0.0",
+        "@semantic-release/commit-analyzer": "^13.0.1",
+        "@semantic-release/git": "^11.0.1",
+        "@semantic-release/github": "^12.0.11",
+        "@semantic-release/npm": "^13.2.0",
+        "@semantic-release/release-notes-generator": "^14.1.1",
+        "@types/node": "^26.6.6",
+        "semantic-release": "^25.0.9",
+        "typescript": "^7.0.2"
+    },
+    "release": {
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            [
+                "@semantic-release/changelog",
+                {
+                    "changelogFile": "CHANGELOG.md"
+                }
+            ],
+            [
+                "@semantic-release/npm",
+                {
+                    "npmPublish": false
+                }
+            ],
+            [
+                "@semantic-release/git",
+                {
+                    "assets": [
+                        "package.json",
+                        "package-lock.json",
+                        "CHANGELOG.md"
+                    ],
+                    "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+                }
+            ],
+            [
+                "@semantic-release/github",
+                {
+                    "failComment": false
+                }
+            ]
+        ]
+    }
+}
