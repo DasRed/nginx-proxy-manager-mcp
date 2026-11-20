@@ -1,6 +1,6 @@
 {
     "name": "@dasred/nginx-proxy-manager-mcp",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Streamable HTTP MCP server for the Nginx Proxy Manager API (Node.js port of VeryBigSad/nginx-proxy-manager-mcp), packaged as a Docker image",
     "type": "module",
     "author": "Marco Starker",
