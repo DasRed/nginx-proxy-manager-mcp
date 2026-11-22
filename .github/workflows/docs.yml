@@ -1,0 +1,21 @@
+name: Docs
+
+on:
+  push:
+    branches: [ main ]
+    paths:    [ 'docs/**' ]
+
+  workflow_dispatch:
+
+jobs:
+  release-website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DasRed/github-workflows/.github/actions/docs-check@v1
+
+      - uses: DasRed/github-workflows/.github/actions/website-release@v1
+        with:
+          token: ${{ secrets.WEBSITE_RELEASE_TOKEN }}
+          slug:  nginx-proxy-manager-mcp
