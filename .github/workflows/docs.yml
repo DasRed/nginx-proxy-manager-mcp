@@ -5,10 +5,25 @@ on:
     branches: [ main ]
     paths:    [ 'docs/**' ]
 
+  pull_request:
+    paths: [ 'docs/**' ]
+
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DasRed/github-workflows/.github/actions/docs-check@v1
+
   release-website:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
