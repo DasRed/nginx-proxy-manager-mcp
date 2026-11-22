@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dasred/nginx-proxy-manager-mcp/compare/v1.0.2...v1.1.0) (2026-11-22)
+
+
+### Features
+
+* delpoy to registry.modelcontextprotocol.io ([56e8e0c](https://github.com/dasred/nginx-proxy-manager-mcp/commit/56e8e0c5ba1bfcf5a3c95a4ff3fa0aebaca5669c))
+
 ## [1.0.2](https://github.com/dasred/nginx-proxy-manager-mcp/compare/v1.0.1...v1.0.2) (2026-11-20)
 
 
