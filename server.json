@@ -1,0 +1,91 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "io.github.DasRed/nginx-proxy-manager-mcp",
+    "title": "Nginx Proxy Manager",
+    "description": "Manage Nginx Proxy Manager hosts, certificates and access lists. Read-only by default.",
+    "version": "1.0.2",
+    "websiteUrl": "https://www.marco-starker.de/en/projects/nginx-proxy-manager-mcp/docs",
+    "repository": {
+        "id": "1458606329",
+        "source": "github",
+        "url": "https://github.com/DasRed/nginx-proxy-manager-mcp"
+    },
+    "packages": [
+        {
+            "registryType": "oci",
+            "identifier": "ghcr.io/dasred/nginx-proxy-manager-mcp:1.0.2",
+            "runtimeHint": "docker",
+            "runtimeArguments": [
+                {
+                    "type": "named",
+                    "name": "-p",
+                    "description": "Port mapping host:container. The URL below assumes host port 3000.",
+                    "default": "3000:3000",
+                    "isRequired": true
+                }
+            ],
+            "transport": {
+                "type": "streamable-http",
+                "url": "http://localhost:3000/mcp",
+                "headers": [
+                    {
+                        "name": "Authorization",
+                        "description": "\"Bearer <token>\", only needed when MCP_AUTH_TOKEN is set",
+                        "isRequired": false,
+                        "isSecret": true
+                    }
+                ]
+            },
+            "environmentVariables": [
+                {
+                    "name": "NPM_URL",
+                    "description": "Admin URL of Nginx Proxy Manager (port 81) as reachable from the container",
+                    "placeholder": "http://nginx-proxy-manager:81",
+                    "isRequired": true
+                },
+                {
+                    "name": "NPM_EMAIL",
+                    "description": "Email of a dedicated NPM user without two-factor authentication",
+                    "isRequired": true
+                },
+                {
+                    "name": "NPM_PASSWORD",
+                    "description": "Password of that NPM user",
+                    "isRequired": true,
+                    "isSecret": true
+                },
+                {
+                    "name": "MCP_READ_ONLY",
+                    "description": "Only expose the read-only tools",
+                    "format": "boolean",
+                    "default": "true",
+                    "choices": [
+                        "true",
+                        "false"
+                    ]
+                },
+                {
+                    "name": "MCP_TOOLS_ALLOW",
+                    "description": "Comma separated tool names to keep, * as wildcard",
+                    "placeholder": "list_*,get_*"
+                },
+                {
+                    "name": "MCP_TOOLS_DENY",
+                    "description": "Comma separated tool names to remove, * as wildcard",
+                    "placeholder": "*_user,delete_*"
+                },
+                {
+                    "name": "MCP_AUTH_TOKEN",
+                    "description": "If set, the MCP endpoint requires Authorization: Bearer <token>",
+                    "isSecret": true
+                },
+                {
+                    "name": "NPM_TIMEOUT_MS",
+                    "description": "Request timeout against NPM in milliseconds",
+                    "format": "number",
+                    "default": "30000"
+                }
+            ]
+        }
+    ]
+}

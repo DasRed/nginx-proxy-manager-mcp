@@ -1,5 +1,7 @@
 FROM node:26-alpine
 
+LABEL io.modelcontextprotocol.server.name="io.github.DasRed/nginx-proxy-manager-mcp"
+
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000

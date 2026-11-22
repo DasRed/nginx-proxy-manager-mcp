@@ -40,6 +40,7 @@
     "devDependencies": {
         "@semantic-release/changelog": "^7.0.0",
         "@semantic-release/commit-analyzer": "^13.0.1",
+        "@semantic-release/exec": "^7.1.0",
         "@semantic-release/git": "^11.0.1",
         "@semantic-release/github": "^12.0.11",
         "@semantic-release/npm": "^13.2.0",
@@ -65,11 +66,18 @@
                 }
             ],
             [
+                "@semantic-release/exec",
+                {
+                    "prepareCmd": "jq --indent 4 --arg v ${nextRelease.version} '.version = $v | .packages |= map(if .registryType == \"oci\" then .identifier |= sub(\":[^:/@]+$\"; \"\") + \":\" + $v else . end)' server.json > server.json.tmp && mv server.json.tmp server.json"
+                }
+            ],
+            [
                 "@semantic-release/git",
                 {
                     "assets": [
                         "package.json",
                         "package-lock.json",
+                        "server.json",
                         "CHANGELOG.md"
                     ],
                     "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"

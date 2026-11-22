@@ -22,3 +22,13 @@ jobs:
     with:
       environment: chronos
       container-name: mcp-nginx-proxy-manager
+
+  mcp-registry:
+    needs: pipeline
+    if:    needs.pipeline.outputs.released == 'true'
+    uses:  DasRed/github-workflows/.github/workflows/mcp-publish.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      version: ${{ needs.pipeline.outputs.version }}
