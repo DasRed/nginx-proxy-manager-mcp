@@ -1,6 +1,6 @@
 ---
 title: Connect to Claude
-description: Add nginx-proxy-manager-mcp as a custom connector in Claude or as a remote MCP server in Claude Code, and test it.
+description: Add nginx-proxy-manager-mcp as a custom connector in Claude (web, desktop, mobile) or as a remote MCP server in Claude Code, test it and fix common problems.
 order: 30
 slug: claude
 section: Setup

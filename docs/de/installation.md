@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: nginx-proxy-manager-mcp als Docker-Container neben Nginx Proxy Manager starten.
+description: nginx-proxy-manager-mcp als Docker-Container neben Nginx Proxy Manager starten, per docker run oder Compose, mit Ports, Endpunkten und Freigabe über NPM.
 order: 10
 slug: installation
 section: Einrichtung

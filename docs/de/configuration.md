@@ -1,6 +1,6 @@
 ---
 title: Konfiguration
-description: Alle Umgebungsvariablen von nginx-proxy-manager-mcp mit Standardwerten, Tool-Filtern und NPM-Benutzer.
+description: Alle Umgebungsvariablen von nginx-proxy-manager-mcp mit Standardwerten, dazu wie du einen eigenen NPM-Benutzer anlegst und die Tools per Filter einschränkst.
 order: 20
 slug: konfiguration
 section: Einrichtung

@@ -1,6 +1,6 @@
 ---
 title: Sicherheit
-description: Welche Rechte nginx-proxy-manager-mcp braucht, was der Server darf und wie du den Endpunkt absicherst.
+description: Welche Rechte nginx-proxy-manager-mcp in Nginx Proxy Manager braucht, wann du schreibend arbeitest und wie du Endpunkt und Zugangsdaten absicherst.
 order: 50
 slug: sicherheit
 section: Referenz

@@ -1,6 +1,6 @@
 ---
 title: Überblick
-description: nginx-proxy-manager-mcp macht die API von Nginx Proxy Manager als Remote-MCP-Server für Claude nutzbar.
+description: nginx-proxy-manager-mcp macht die API von Nginx Proxy Manager als Remote-MCP-Server für Claude nutzbar. Was er kann, worauf er aufbaut und der aktuelle Status.
 order: 0
 section: Einstieg
 ---

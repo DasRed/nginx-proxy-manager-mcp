@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Run nginx-proxy-manager-mcp as a Docker container next to Nginx Proxy Manager.
+description: Run nginx-proxy-manager-mcp as a Docker container next to Nginx Proxy Manager with docker run or Compose, with ports, endpoints and publishing through NPM.
 order: 10
 slug: installation
 section: Setup

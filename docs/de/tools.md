@@ -1,6 +1,6 @@
 ---
 title: Tools
-description: Referenz aller 50 Tools von nginx-proxy-manager-mcp mit Parametern, Art und Beispielen.
+description: Referenz aller 50 Tools von nginx-proxy-manager-mcp für Proxy Hosts, Redirections, Streams, Zertifikate und Access Lists, mit Parametern und Beispielen.
 order: 40
 slug: tools
 section: Referenz

@@ -1,6 +1,6 @@
 ---
 title: Security
-description: Which permissions nginx-proxy-manager-mcp needs, what the server may do and how to protect the endpoint.
+description: Which permissions nginx-proxy-manager-mcp needs in Nginx Proxy Manager, when to turn on write mode and how to protect the endpoint and the credentials.
 order: 50
 slug: security
 section: Reference

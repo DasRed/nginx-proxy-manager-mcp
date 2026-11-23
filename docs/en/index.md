@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: nginx-proxy-manager-mcp exposes the Nginx Proxy Manager API as a remote MCP server for Claude.
+description: nginx-proxy-manager-mcp exposes the Nginx Proxy Manager API as a remote MCP server for Claude. What it can do, what it is based on and its current status.
 order: 0
 section: Getting started
 ---

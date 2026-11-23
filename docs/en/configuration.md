@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: All environment variables of nginx-proxy-manager-mcp with defaults, tool filters and the NPM user.
+description: All environment variables of nginx-proxy-manager-mcp with their defaults, plus how to create a dedicated NPM user and limit the available tools with filters.
 order: 20
 slug: configuration
 section: Setup
