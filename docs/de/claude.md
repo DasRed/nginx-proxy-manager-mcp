@@ -1,6 +1,6 @@
 ---
 title: In Claude einbinden
-description: nginx-proxy-manager-mcp als Custom Connector in Claude (Web, Desktop, Mobile), als Remote-MCP-Server in Claude Code oder per JSON-Konfiguration in anderen MCP-Clients einbinden, testen und Fehler finden.
+description: nginx-proxy-manager-mcp als Custom Connector, in Claude Code oder per JSON in anderen MCP-Clients in Claude einbinden, mit Verbindungstest und Fehlersuche.
 order: 30
 slug: claude
 section: Einrichtung
