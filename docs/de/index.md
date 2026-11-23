@@ -44,3 +44,4 @@ Aktiv im Einsatz. Das Image wird bei jedem Release automatisch nach `ghcr.io/das
 1. [Installation](installation.md)
 2. [Konfiguration](configuration.md)
 3. [In Claude einbinden](claude.md)
+4. [Andere MCP-Clients](clients.md)

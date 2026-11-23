@@ -44,3 +44,4 @@ Actively used. The image is built automatically to `ghcr.io/dasred/nginx-proxy-m
 1. [Installation](installation.md)
 2. [Configuration](configuration.md)
 3. [Connect to Claude](claude.md)
+4. [Other MCP clients](clients.md)
