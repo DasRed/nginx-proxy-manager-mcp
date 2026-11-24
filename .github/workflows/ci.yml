@@ -11,24 +11,15 @@ permissions:
   packages:      write
   issues:        write
   pull-requests: write
+  id-token:      write
 
 jobs:
-  pipeline:
-    uses: DasRed/github-workflows/.github/workflows/node-docker.yml@v1
+  mcp-publish:
+    uses: DasRed/github-workflows/.github/workflows/mcp-publish.yml@v2
     secrets:
-      dockhand-host: ${{ secrets.DOCKHAND_HOST }}
-      dockhand-token: ${{ secrets.DOCKHAND_TOKEN }}
+      dockhand-host:             ${{ secrets.DOCKHAND_HOST }}
+      dockhand-token:            ${{ secrets.DOCKHAND_TOKEN }}
       homeassistant-webhook-url: ${{ secrets.HOMEASSISTANT_WEBHOOK_URL }}
     with:
-      environment: chronos
+      environment:    chronos
       container-name: mcp-nginx-proxy-manager
-
-  mcp-registry:
-    needs: pipeline
-    if:    needs.pipeline.outputs.released == 'true'
-    uses:  DasRed/github-workflows/.github/workflows/mcp-publish.yml@v1
-    permissions:
-      contents: read
-      id-token: write
-    with:
-      version: ${{ needs.pipeline.outputs.version }}

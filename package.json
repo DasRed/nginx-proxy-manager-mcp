@@ -29,66 +29,14 @@
         "start": "node dist/index.js",
         "dev": "node --env-file-if-exists=.env --watch src/index.ts",
         "typecheck": "tsc -p tsconfig.test.json",
-        "test": "npm run typecheck && node --test \"test/**/*.test.ts\"",
-        "publish:check": "semantic-release --branch main --no-ci --dry-run",
-        "semantic-release": "semantic-release"
+        "test": "npm run typecheck && node --test \"test/**/*.test.ts\""
     },
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.32.2",
         "zod": "^4.6.7"
     },
     "devDependencies": {
-        "@semantic-release/changelog": "^7.0.0",
-        "@semantic-release/commit-analyzer": "^13.0.1",
-        "@semantic-release/exec": "^7.1.0",
-        "@semantic-release/git": "^11.0.1",
-        "@semantic-release/github": "^12.0.11",
-        "@semantic-release/npm": "^13.2.0",
-        "@semantic-release/release-notes-generator": "^14.1.1",
         "@types/node": "^26.6.6",
-        "semantic-release": "^25.0.9",
         "typescript": "^7.0.2"
-    },
-    "release": {
-        "plugins": [
-            "@semantic-release/commit-analyzer",
-            "@semantic-release/release-notes-generator",
-            [
-                "@semantic-release/changelog",
-                {
-                    "changelogFile": "CHANGELOG.md"
-                }
-            ],
-            [
-                "@semantic-release/npm",
-                {
-                    "npmPublish": false
-                }
-            ],
-            [
-                "@semantic-release/exec",
-                {
-                    "prepareCmd": "jq --indent 4 --arg v ${nextRelease.version} '.version = $v | .packages |= map(if .registryType == \"oci\" then .identifier |= sub(\":[^:/@]+$\"; \"\") + \":\" + $v else . end)' server.json > server.json.tmp && mv server.json.tmp server.json"
-                }
-            ],
-            [
-                "@semantic-release/git",
-                {
-                    "assets": [
-                        "package.json",
-                        "package-lock.json",
-                        "server.json",
-                        "CHANGELOG.md"
-                    ],
-                    "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-                }
-            ],
-            [
-                "@semantic-release/github",
-                {
-                    "failComment": false
-                }
-            ]
-        ]
     }
 }
