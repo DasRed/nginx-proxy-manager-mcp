@@ -3,7 +3,7 @@
     "name": "io.github.DasRed/nginx-proxy-manager-mcp",
     "title": "Nginx Proxy Manager",
     "description": "Manage Nginx Proxy Manager hosts, certificates and access lists. Read-only by default.",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "websiteUrl": "https://www.marco-starker.de/en/projects/nginx-proxy-manager-mcp/docs",
     "repository": {
         "id": "1458606329",
@@ -13,7 +13,7 @@
     "packages": [
         {
             "registryType": "oci",
-            "identifier": "ghcr.io/dasred/nginx-proxy-manager-mcp:1.1.0",
+            "identifier": "ghcr.io/dasred/nginx-proxy-manager-mcp:1.1.1",
             "runtimeHint": "docker",
             "runtimeArguments": [
                 {
