@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/dasred/nginx-proxy-manager-mcp/compare/v1.1.1...v1.1.2) (2026-11-24)
+
+### Bug Fixes
+
+* homepage fixed ([e97bdd2](https://github.com/dasred/nginx-proxy-manager-mcp/commit/e97bdd27cc15868dfd25582fdb1bc0bb4b9dd627))
+
 ## [1.1.1](https://github.com/dasred/nginx-proxy-manager-mcp/compare/v1.1.0...v1.1.1) (2026-11-24)
 
 ### Bug Fixes
